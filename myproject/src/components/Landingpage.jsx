@@ -20,7 +20,7 @@ function Landingpage() {
         <div className="hero-content text-center text-white">
           <h1 className="display-3 fw-bold">Explore the World with Us</h1>
           <p className="lead">Discover hidden places, amazing cultures, and unforgettable journeys.</p>
-          <a href="#blogs" className="btn btn-primary btn-lg mt-3">Start Exploring</a>
+
         </div>
       </section>
 
