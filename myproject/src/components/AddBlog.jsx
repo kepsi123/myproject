@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
-import "./AddBlog.css"
+import "./AddBlog.css";
 
 function AddBlog({ onAddBlog }) {
   const [title, setTitle] = useState("");
@@ -12,37 +12,36 @@ function AddBlog({ onAddBlog }) {
     onAddBlog({ title, content });
     setTitle("");
     setContent("");
-    navigate("/"); // back to homepage
+    navigate("/");
   };
 
   return (
-    <div className="container mt-5">
-      <div className="card p-4 shadow mx-auto" style={{ maxWidth: "600px" }}>
-        <h2 className="mb-3 text-center">Add Blog</h2>
+    <div className="add-blog-page">
+      <div className="add-blog-card">
+        <h2 className="add-blog-title">Add Blog</h2>
         <form onSubmit={handleSubmit}>
-          <div className="mb-3">
-            <label className="form-label">Title</label>
+          <div>
+            <label className="add-blog-label">Title</label>
             <input
               type="text"
-              className="form-control"
+              className="add-blog-input"
               placeholder="Enter blog title"
               value={title}
               onChange={(e) => setTitle(e.target.value)}
               required
             />
           </div>
-          <div className="mb-3">
-            <label className="form-label">Content</label>
+          <div>
+            <label className="add-blog-label">Content</label>
             <textarea
-              className="form-control"
-              rows="5"
+              className="add-blog-textarea"
               placeholder="Write blog content"
               value={content}
               onChange={(e) => setContent(e.target.value)}
               required
             />
           </div>
-          <button type="submit" className="btn btn-primary w-100">
+          <button type="submit" className="add-blog-button">
             Add Blog
           </button>
         </form>

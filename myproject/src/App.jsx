@@ -17,7 +17,7 @@ function App() {
       <Routes>
         <Route path="/landing" element={<Landingpage />} />
         <Route path="/login" element={<Loginpage />} />
-        <Route path="/" element={<Homepage />} />
+        <Route path="/home" element={<Homepage />} />
         <Route path="/add" element={<AddBlog onAddBlog={handleAddBlog} />} />
       </Routes>
     </BrowserRouter>

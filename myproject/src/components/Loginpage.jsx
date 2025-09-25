@@ -1,9 +1,9 @@
-import React from 'react';
-import './Loginpage.css';
+import React from "react";
+import "./Loginpage.css";
 
 function Loginpage() {
   return (
-    <div className="page-container">
+    <div className="login-page">
       <div className="login-box">
         <h1 className="title">Login</h1>
         <form>
@@ -25,4 +25,4 @@ function Loginpage() {
   );
 }
 
-export default Loginpage
+export default Loginpage;

@@ -1,41 +1,55 @@
-
-body, html {
-  margin: 0;
+/* Make html and body full height and apply background */
+html, body {
   height: 100%;
+  margin: 0;
+  padding: 0;
+  background-image: url('./addblogimage.jpg');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
   font-family: Arial, sans-serif;
 }
 
-.page-container {
-  height: 100vh;
+/* Login Page Wrapper */
+.login-page {
+  width: 100%;
+  min-height: 100vh;
   display: flex;
   justify-content: center;
   align-items: center;
-
-  
-  background-image: url("/bgimage.jpg"); 
-  background-size: cover;
-  background-position: center;
+  padding: 50px 0; /* allows scroll if content grows */
+  box-sizing: border-box;
 }
 
-
+/* Login Box */
 .login-box {
-  background: rgba(255, 255, 255, 0.1);    
+  background: rgba(0, 0, 0, 0.5);  /* semi-transparent dark for readability */
   padding: 40px;
   border-radius: 15px;
   box-shadow: 0 8px 25px rgba(0,0,0,0.4);
   width: 350px;
   text-align: center;
   color: white;
+  backdrop-filter: blur(5px); /* modern floating effect */
 }
 
+/* Remove Bootstrap default white backgrounds if card is used */
+.login-box .card,
+.login-box .card-header {
+  background: transparent !important;
+  box-shadow: none !important;
+}
 
+/* Title */
 .title {
   margin-bottom: 20px;
   font-size: 24px;
   font-weight: bold;
+  color: white;
 }
 
-
+/* Inputs */
 .input-group {
   margin-bottom: 15px;
   text-align: left;
@@ -45,6 +59,7 @@ body, html {
   display: block;
   margin-bottom: 5px;
   font-weight: bold;
+  color: white;
 }
 
 .input-group input {
@@ -53,9 +68,11 @@ body, html {
   border: none;
   border-radius: 6px;
   outline: none;
+  background: rgba(255,255,255,0.2);
+  color: white;
 }
 
-
+/* Buttons */
 .button-group {
   display: flex;
   justify-content: space-between;
@@ -73,6 +90,7 @@ body, html {
   transition: 0.3s;
 }
 
+/* Login Button */
 .login-btn {
   background-color: #4a90e2;
   color: white;
@@ -82,6 +100,7 @@ body, html {
   background-color: #357abd;
 }
 
+/* Reset Button */
 .reset-btn {
   background-color: #e74c3c;
   color: white;

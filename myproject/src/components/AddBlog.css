@@ -1,56 +1,93 @@
-/* .add-blog-container {
-  margin-top: 50px;
+/* Make html and body full height and apply background */
+html, body {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  background-image: url('./addblogimage.jpg');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  font-family: Arial, sans-serif;
+}
+
+/* Add Blog Page Wrapper */
+.add-blog-page {
+  width: 100%;
+  min-height: 100vh; /* full viewport at least */
   display: flex;
   justify-content: center;
+  align-items: center;
+  padding: 50px 0; /* spacing for scroll if content is tall */
+  box-sizing: border-box;
 }
 
+/* Card */
 .add-blog-card {
-  max-width: 600px;
-  width: 100%;
-  background: #ffffff;
+  width: 90%;
+  max-width: 550px;
+  background: rgba(255, 255, 255, 0.85); /* slightly transparent */
+  backdrop-filter: blur(5px); /* makes card look nice over image */
   border-radius: 12px;
-  padding: 25px;
-  box-shadow: 0px 6px 15px rgba(0, 0, 0, 0.1);
+  padding: 30px;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.2);
 }
 
+/* Remove Bootstrap default white backgrounds if card-header is used */
+.add-blog-card .card-header {
+  background: transparent !important;
+  box-shadow: none !important;
+}
+
+/* Title */
 .add-blog-title {
   text-align: center;
-  font-size: 26px;
+  font-size: 24px;
   font-weight: bold;
-  color: #333;
   margin-bottom: 20px;
+  color: #222;
 }
 
+/* Labels and Inputs */
 .add-blog-label {
   font-weight: 500;
   color: #444;
+  margin-bottom: 5px;
+  display: block;
 }
 
 .add-blog-input,
 .add-blog-textarea {
-  border-radius: 8px;
+  width: 100%;
+  padding: 10px;
+  font-size: 15px;
+  border-radius: 6px;
   border: 1px solid #ccc;
-  transition: all 0.3s ease-in-out;
+  margin-bottom: 15px;
+  box-sizing: border-box;
 }
 
 .add-blog-input:focus,
 .add-blog-textarea:focus {
   border-color: #007bff;
-  box-shadow: 0px 0px 5px rgba(0, 123, 255, 0.3);
+  box-shadow: 0 0 5px rgba(0,123,255,0.3);
   outline: none;
 }
 
+/* Button */
 .add-blog-button {
   width: 100%;
+  padding: 12px;
+  font-size: 15px;
   background: #007bff;
   color: white;
-  border-radius: 8px;
-  padding: 12px;
   font-weight: bold;
+  border-radius: 6px;
   border: none;
   transition: 0.3s;
+  cursor: pointer;
 }
 
 .add-blog-button:hover {
   background: #0056b3;
-} */
+}
