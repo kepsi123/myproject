@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
+import "./AddBlog.css"
 
 function AddBlog({ onAddBlog }) {
   const [title, setTitle] = useState("");
