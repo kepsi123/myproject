@@ -1,4 +1,4 @@
-/* Make html and body full height and apply background */
+/* ========== Global Styles ========== */
 html, body {
   height: 100%;
   margin: 0;
@@ -11,14 +11,63 @@ html, body {
   font-family: Arial, sans-serif;
 }
 
-/* Add Blog Page Wrapper */
+/* ========== Navbar ========== */
+.navbar {
+  width: 100%;
+  position: fixed; /* stays on top */
+  top: 0;
+  left: 0;
+  z-index: 1000;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 12px 30px;
+
+  background: rgba(255, 255, 255, 0.7); /* semi-transparent */
+  backdrop-filter: blur(6px); /* glass effect */
+  border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+.navbar-logo {
+  font-size: 20px;
+  font-weight: bold;
+  color: #222;
+}
+
+.navbar-links {
+  list-style: none;
+  display: flex;
+  gap: 20px;
+  margin: 0;
+  padding: 0;
+}
+
+.navbar-links a {
+  text-decoration: none;
+  font-size: 16px;
+  font-weight: 500;
+  color: #222;
+  transition: color 0.3s;
+}
+
+.navbar-links a:hover {
+  color: #007bff; /* matches your button color */
+}
+
+/* ========== Page Content Wrapper ========== */
+/* Adds top padding so content is not hidden behind navbar */
+.page-content {
+  padding-top: 80px; /* adjust based on navbar height */
+}
+
+/* ========== Add Blog Page ========== */
 .add-blog-page {
   width: 100%;
-  min-height: 100vh; /* full viewport at least */
+  min-height: 100vh;
   display: flex;
   justify-content: center;
   align-items: center;
-  padding: 50px 0; /* spacing for scroll if content is tall */
+  padding: 100px 20px 50px; /* extra top padding so content clears navbar */
   box-sizing: border-box;
 }
 
@@ -26,8 +75,8 @@ html, body {
 .add-blog-card {
   width: 90%;
   max-width: 550px;
-  background: rgba(255, 255, 255, 0.85); /* slightly transparent */
-  backdrop-filter: blur(5px); /* makes card look nice over image */
+  background: rgba(255, 255, 255, 0.85);
+  backdrop-filter: blur(5px);
   border-radius: 12px;
   padding: 30px;
   box-shadow: 0 4px 15px rgba(0,0,0,0.2);
