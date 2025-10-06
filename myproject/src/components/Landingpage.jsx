@@ -9,9 +9,13 @@ function Landingpage() {
     <div>
       
       <nav className="navbar navbar-expand-lg navbar-light bg-light shadow-sm">
-        <div className="container">
+        <div className="container-fluid d-flex justify-content-between px-4">
+
           <a className="navbar-brand fw-bold" href="#">Travel Blog</a>
-         <Link to="/login" ><button className="btn btn-outline-primary">Login</button></Link>
+          <Link to="/login">
+      <button className="btn btn-login">Login</button>
+    </Link>
+        
         </div>
       </nav>
 

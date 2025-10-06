@@ -1,3 +1,10 @@
+html, body {
+  margin: 0;
+  padding: 0;
+}
+
+
+
 .hero {
   background: url('/landing.jpeg') no-repeat center center/cover;
   height: 100vh;
@@ -23,3 +30,22 @@
   height: 200px;
   object-fit: cover;
 }
+
+/* === Added changes for Travel Blog & Login button === */
+.navbar-brand {
+  font-size: 1.9rem;               /* Bigger font */
+  font-family: 'Poppins', sans-serif; /* Modern font */
+  font-weight: 700;                /* Bold */
+  color: #333 !important;          /* Darker color */
+}
+
+.navbar .btn {
+  font-size: 1.5rem;
+  padding: 7px 20px;
+  border-radius: 5px;   /* Rounded button */
+  font-family: 'Poppins', sans-serif;
+  font-weight: 600;
+  background-color: #3c638f;
+  color: white;
+}
+
