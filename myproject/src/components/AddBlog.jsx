@@ -2,9 +2,6 @@ import React, { useState } from "react";
 import { useNavigate, Link } from "react-router-dom";
 import "./AddBlog.css";
 
-
-
-
 function AddBlog({ onAddBlog }) {
   const [title, setTitle] = useState("");
   const [content, setContent] = useState("");
@@ -15,14 +12,29 @@ function AddBlog({ onAddBlog }) {
     onAddBlog({ title, content });
     setTitle("");
     setContent("");
-    navigate("/");
+    navigate("/landing");
   };
-  
+
+  const handleLogout = () => {
+    navigate("/landing");
+  };
+
   return (
     <div>
+      {/* ✅ Navbar Section */}
+      <nav className="addblog-navbar">
+        <div className="navbar-left">TravelBlog</div>
+        <div className="navbar-right">
+          <Link to="/login" className="nav-login-btn">
+            Login
+          </Link>
+          <button onClick={handleLogout} className="logout-btn">
+            Logout
+          </button>
+        </div>
+      </nav>
 
-
-    
+      {/* ✅ Add Blog Page Content */}
       <div className="add-blog-page">
         <div className="add-blog-card">
           <h2 className="add-blog-title">Add Blog</h2>

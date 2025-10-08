@@ -1,142 +1,136 @@
-/* ========== Global Styles ========== */
-/* html, body {
-  height: 100%;
-  margin: 0;
-  padding: 0;
+/* ---------- Navbar Styles ---------- */
+.addblog-navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #2d80a7; /* darker blue-gray for contrast */
+  padding: 12px 24px;
+  color: white;
+  font-family: "Poppins", sans-serif;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
+}
+
+.navbar-left {
+  font-size: 22px;
+  font-weight: 600;
+  letter-spacing: 0.5px;
+}
+
+.navbar-right {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+}
+
+/* Login link styled as button */
+.nav-login-btn {
+  background-color: #104f6d; /* golden-yellow tone */
+  color: white;
+  border: none;
+  padding: 6px 14px;
+  border-radius: 6px;
+  font-size: 15px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  text-decoration: none;
+  font-weight: 500;
+}
+
+.nav-login-btn:hover {
+  background-color: #1a59a1;
+}
+
+/* Logout button */
+.logout-btn {
+  background-color: #e74c3c; /* red tone */
+  color: white;
+  border: none;
+  padding: 6px 14px;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 15px;
+  font-weight: 500;
+  transition: background-color 0.3s ease;
+}
+
+.logout-btn:hover {
+  background-color: #c0392b;
+}
+
+/* ---------- Add Blog Page Styles ---------- */
+.add-blog-page {
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
   background-image: url('./addblogimage.jpg');
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
   background-attachment: fixed;
-  font-family: Arial, sans-serif;
-} */
-
-/* ========== Navbar ========== */
-.navbar {
-  width: 100%;
-  position: fixed; /* stays on top */
-  top: 0;
-  left: 0;
-  z-index: 1000;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 12px 30px;
-
-  background: rgba(255, 255, 255, 0.7); /* semi-transparent */
-  backdrop-filter: blur(6px); /* glass effect */
-  border-bottom: 1px solid rgba(0, 0, 0, 0.1);
-}
-
-.navbar-logo {
-  font-size: 20px;
-  font-weight: bold;
-  color: #222;
-}
-
-.navbar-links {
-  list-style: none;
-  display: flex;
-  gap: 20px;
   margin: 0;
-  padding: 0;
+  padding: 40px 20px;
 }
 
-.navbar-links a {
-  text-decoration: none;
-  font-size: 16px;
-  font-weight: 500;
-  color: #222;
-  transition: color 0.3s;
-}
-
-.navbar-links a:hover {
-  color: #007bff; /* matches your button color */
-}
-
-/* ========== Page Content Wrapper ========== */
-/* Adds top padding so content is not hidden behind navbar */
-.page-content {
-  padding-top: 80px; /* adjust based on navbar height */
-}
-
-/* ========== Add Blog Page ========== */
-.add-blog-page {
-  width: 100%;
-  min-height: 100vh;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  padding: 100px 20px 50px; /* extra top padding so content clears navbar */
-  box-sizing: border-box;
-}
-
-/* Card */
 .add-blog-card {
-  width: 90%;
-  max-width: 550px;
-  background: rgba(255, 255, 255, 0.85);
-  backdrop-filter: blur(5px);
+  background: rgba(255, 255, 255, 0.9);
+  padding: 40px;
   border-radius: 12px;
-  padding: 30px;
-  box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+  width: 100%;
+  max-width: 500px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
 }
 
-/* Remove Bootstrap default white backgrounds if card-header is used */
-.add-blog-card .card-header {
-  background: transparent !important;
-  box-shadow: none !important;
-}
-
-/* Title */
 .add-blog-title {
   text-align: center;
-  font-size: 24px;
-  font-weight: bold;
-  margin-bottom: 20px;
-  color: #222;
+  color: #2e4a62;
+  margin-bottom: 25px;
+  font-family: "Poppins", sans-serif;
 }
 
-/* Labels and Inputs */
 .add-blog-label {
-  font-weight: 500;
-  color: #444;
-  margin-bottom: 5px;
   display: block;
+  margin-bottom: 6px;
+  font-weight: 500;
+  color: #333;
 }
 
 .add-blog-input,
 .add-blog-textarea {
   width: 100%;
-  padding: 10px;
-  font-size: 15px;
-  border-radius: 6px;
+  padding: 10px 12px;
+  margin-bottom: 20px;
   border: 1px solid #ccc;
-  margin-bottom: 15px;
-  box-sizing: border-box;
+  border-radius: 6px;
+  font-size: 15px;
+  font-family: "Poppins", sans-serif;
+  transition: border-color 0.3s;
 }
 
 .add-blog-input:focus,
 .add-blog-textarea:focus {
-  border-color: #007bff;
-  box-shadow: 0 0 5px rgba(0,123,255,0.3);
+  border-color: #2e4a62;
   outline: none;
 }
 
-/* Button */
+.add-blog-textarea {
+  height: 120px;
+  resize: none;
+}
+
 .add-blog-button {
   width: 100%;
-  padding: 12px;
-  font-size: 15px;
-  background: #007bff;
+  padding: 10px;
+  background-color: #2e4a62;
   color: white;
-  font-weight: bold;
-  border-radius: 6px;
   border: none;
-  transition: 0.3s;
+  border-radius: 6px;
+  font-size: 16px;
+  font-weight: 500;
   cursor: pointer;
+  transition: background-color 0.3s ease;
 }
 
 .add-blog-button:hover {
-  background: #0056b3;
+  background-color: #24394c;
 }
