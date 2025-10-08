@@ -1,0 +1,152 @@
+/* Page wrapper with background image */
+.admin-login-page {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  margin: 0;
+ background: url('/adminimage.jpg') no-repeat center center;
+
+  background-size: cover;
+  font-family: "Poppins", sans-serif;
+  box-sizing: border-box;
+  position: relative;
+}
+
+/* Optional: dark overlay to make login box stand out */
+.admin-login-page::before {
+  content: "";
+  position: absolute;
+  top: 0; left: 0; right: 0; bottom: 0;
+  background-color: rgba(0,0,0,0.5); /* Adjust opacity as needed */
+  z-index: 0;
+}
+
+/* Login box */
+.admin-login-container {
+  background-color: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(10px);
+  border-radius: 16px;
+  padding: 40px;
+  width: 350px;
+  max-width: 90%;
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3);
+  color: #fff;
+  text-align: center;
+  position: relative; /* Bring it above the overlay */
+  z-index: 1;
+}
+
+/* Title */
+.admin-login-title {
+  margin-bottom: 25px;
+  font-size: 26px;
+  font-weight: 600;
+}
+
+/* Input fields */
+.input-group {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 18px;
+  text-align: left;
+}
+
+.input-group label {
+  margin-bottom: 6px;
+  font-size: 14px;
+}
+
+.input-group input {
+  padding: 10px;
+  border-radius: 8px;
+  border: none;
+  outline: none;
+  background-color: rgba(255, 255, 255, 0.2);
+  color: #fff;
+  font-size: 14px;
+}
+
+.input-group input::placeholder {
+  color: #ddd;
+}
+
+/* Submit button */
+.login-btn {
+  width: 100%;
+  padding: 12px;
+  margin-top: 10px;
+  background-color: #00b4d8;
+  border: none;
+  border-radius: 8px;
+  color: white;
+  font-weight: bold;
+  cursor: pointer;
+  transition: 0.3s;
+  font-size: 16px;
+}
+
+.login-btn:hover {
+  background-color: #0077b6;
+}
+
+/* Forgot Password / Register links */
+.login-links {
+  margin-top: 15px;
+  font-size: 14px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 5px;
+}
+
+.login-links .separator {
+  color: #fff;
+  margin: 0 5px;
+}
+
+.login-links a {
+  color: #90e0ef;
+  text-decoration: none;
+}
+
+.login-links a:hover {
+  text-decoration: underline;
+}
+
+/* Responsive adjustments */
+@media (max-width: 480px) {
+  .admin-login-container {
+    width: 90%;
+    padding: 30px;
+  }
+
+  .admin-login-title {
+    font-size: 22px;
+  }
+
+  .input-group input {
+    font-size: 13px;
+    padding: 8px;
+  }
+
+  .login-btn {
+    font-size: 14px;
+    padding: 10px;
+  }
+}
+/* Sign Out link at top-left */
+.signout-link {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  color: #297eb6;
+  font-weight: 900;
+  text-decoration: none;
+  cursor: pointer;
+  z-index: 2; /* ensures it stays above overlay */
+}
+
+.signout-link:hover {
+  color: #00b4d8;
+}

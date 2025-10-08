@@ -15,7 +15,7 @@ function Navbar() {
       <div className="navbar-logo">MyBlogApp</div>
       <ul className="navbar-links">
         <li>
-          <Link to="/home">Home</Link>
+         
         </li>
         
         <li>

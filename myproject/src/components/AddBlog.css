@@ -1,5 +1,5 @@
 /* ========== Global Styles ========== */
-html, body {
+/* html, body {
   height: 100%;
   margin: 0;
   padding: 0;
@@ -9,7 +9,7 @@ html, body {
   background-repeat: no-repeat;
   background-attachment: fixed;
   font-family: Arial, sans-serif;
-}
+} */
 
 /* ========== Navbar ========== */
 .navbar {
