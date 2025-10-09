@@ -1,4 +1,4 @@
-/* ---------- Navbar Styles ---------- */
+/* ---------- AddBlog Navbar Styles ---------- */
 .addblog-navbar {
   display: flex;
   justify-content: space-between;
@@ -10,21 +10,21 @@
   box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
 }
 
-.navbar-left {
+.addblog-navbar .navbar-left {
   font-size: 22px;
   font-weight: 600;
   letter-spacing: 0.5px;
 }
 
-.navbar-right {
+.addblog-navbar .navbar-right {
   display: flex;
   align-items: center;
   gap: 14px;
 }
 
-/* Login link styled as button */
-.nav-login-btn {
-  background-color: #104f6d; /* golden-yellow tone */
+/* Login link styled as button specifically for AddBlog */
+.addblog-navbar .nav-login-btn {
+  background-color: #104f6d; /* blue tone */
   color: white;
   border: none;
   padding: 6px 14px;
@@ -36,13 +36,13 @@
   font-weight: 500;
 }
 
-.nav-login-btn:hover {
+.addblog-navbar .nav-login-btn:hover {
   background-color: #1a59a1;
 }
 
-/* Logout button */
-.logout-btn {
-  background-color: #e74c3c; /* red tone */
+/* Logout button specifically for AddBlog navbar */
+.addblog-navbar .logout-btn {
+  background-color: #6e1309; /* red tone */
   color: white;
   border: none;
   padding: 6px 14px;
@@ -53,7 +53,7 @@
   transition: background-color 0.3s ease;
 }
 
-.logout-btn:hover {
+.addblog-navbar .logout-btn:hover {
   background-color: #c0392b;
 }
 

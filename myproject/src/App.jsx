@@ -5,6 +5,7 @@ import Landingpage from "./components/Landingpage";
 import Loginpage from "./components/Loginpage";
 import AddBlog from "./components/AddBlog";
 import AdminLogin from "./components/AdminLogin";
+import Dashboard from "./components/Dashboard";
 
 function App() {
   const [blogs, setBlogs] = useState([]);
@@ -21,10 +22,12 @@ function App() {
         <Route path="/adminlogin" element={<AdminLogin />} />
 
         
-        <Route path="/landing" element={<Landingpage />} />
+        <Route path="/" element={<Landingpage />} />
 
     
         <Route path="/login" element={<Loginpage />} />
+        <Route path="/dashboard" element={<Dashboard />} />
+
 
   
         <Route path="/add" element={<AddBlog onAddBlog={handleAddBlog} />} />

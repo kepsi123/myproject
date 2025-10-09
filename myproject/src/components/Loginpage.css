@@ -18,27 +18,58 @@ html, body {
   display: flex;
   justify-content: center;
   align-items: center;
-  padding: 50px 0; /* allows scroll if content grows */
+  padding: 50px 0;
   box-sizing: border-box;
+  position: relative;
+}
+
+/* Navbar */
+.login-navbar {
+  width: 100%;
+  padding: 15px 30px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: rgba(76, 114, 128, 0.85);
+  color: white;
+  font-weight: 600;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 10;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+}
+
+.login-navbar .navbar-title {
+  font-size: 24px;
+}
+
+.login-navbar .logout-btn {
+  background-color: #962541;
+  color: #e0eaee;
+  border: none;
+  padding: 8px 16px;
+  border-radius: 6px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.login-navbar .logout-btn:hover {
+  background-color: #db5050;
 }
 
 /* Login Box */
 .login-box {
-  background: rgba(0, 0, 0, 0.5);  /* semi-transparent dark for readability */
+  background: rgba(0, 0, 0, 0.5);
   padding: 40px;
   border-radius: 15px;
   box-shadow: 0 8px 25px rgba(0,0,0,0.4);
   width: 350px;
   text-align: center;
   color: white;
-  backdrop-filter: blur(5px); /* modern floating effect */
-}
-
-/* Remove Bootstrap default white backgrounds if card is used */
-.login-box .card,
-.login-box .card-header {
-  background: transparent !important;
-  box-shadow: none !important;
+  backdrop-filter: blur(5px);
+  margin-top: 80px; /* space for navbar */
 }
 
 /* Title */
@@ -75,7 +106,7 @@ html, body {
 /* Buttons */
 .button-group {
   display: flex;
-  justify-content: space-between;
+  justify-content: center; /* center login button */
   margin-top: 20px;
 }
 
@@ -98,14 +129,4 @@ html, body {
 
 .login-btn:hover {
   background-color: #357abd;
-}
-
-/* Reset Button */
-.reset-btn {
-  background-color: #e74c3c;
-  color: white;
-}
-
-.reset-btn:hover {
-  background-color: #c0392b;
 }
