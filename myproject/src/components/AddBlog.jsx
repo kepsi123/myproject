@@ -9,10 +9,19 @@ function AddBlog({ onAddBlog }) {
 
   const handleSubmit = (e) => {
     e.preventDefault();
+
+    // Add the new blog data
     onAddBlog({ title, content });
+
+    // ✅ Show success alert, then redirect on OK
+    const confirm = window.alert("Submitted successfully!");
+
+    // ✅ After alert, go to dashboard
+    navigate("/dashboard");
+
+    // Reset input fields
     setTitle("");
     setContent("");
-    navigate("/landing");
   };
 
   const handleLogout = () => {
@@ -50,6 +59,7 @@ function AddBlog({ onAddBlog }) {
                 required
               />
             </div>
+
             <div>
               <label className="add-blog-label">Content</label>
               <textarea
@@ -60,6 +70,7 @@ function AddBlog({ onAddBlog }) {
                 required
               />
             </div>
+
             <button type="submit" className="add-blog-button">
               Add Blog
             </button>

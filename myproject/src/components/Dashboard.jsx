@@ -10,6 +10,12 @@ function Dashboard() {
     navigate("/login");
   };
 
+  // ✅ When "Users" is clicked, go to Login page
+  const handleUsersClick = () => {
+    setActivePage("users");
+    navigate("/login"); // Redirect to login page
+  };
+
   return (
     <div className="dashboard-container">
       {/* 🔹 Navbar */}
@@ -27,12 +33,12 @@ function Dashboard() {
           <ul>
             <li
               className={activePage === "users" ? "active" : ""}
-              onClick={() => setActivePage("users")}
+              onClick={handleUsersClick}
             >
               Users
             </li>
 
-            {/* ✅ Fixed link to match App.jsx route */}
+            {/* ✅ Add Blog link */}
             <li>
               <Link
                 to="/add"
@@ -51,7 +57,6 @@ function Dashboard() {
             </li>
           </ul>
         </aside>
-
       </div>
     </div>
   );
