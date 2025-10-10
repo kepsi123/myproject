@@ -49,11 +49,15 @@ function Dashboard() {
               </Link>
             </li>
 
-            <li
-              className={activePage === "viewblog" ? "active" : ""}
-              onClick={() => setActivePage("viewblog")}
-            >
-              View Blogs
+            {/* ✅ View Blog link (added navigation) */}
+            <li>
+              <Link
+                to="/viewblog"
+                className="sidebar-link"
+                onClick={() => setActivePage("viewblog")}
+              >
+                View Blogs
+              </Link>
             </li>
           </ul>
         </aside>

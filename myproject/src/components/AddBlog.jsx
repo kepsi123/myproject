@@ -1,27 +1,54 @@
 import React, { useState } from "react";
-import { useNavigate, Link } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import "./AddBlog.css";
 
 function AddBlog({ onAddBlog }) {
   const [title, setTitle] = useState("");
   const [content, setContent] = useState("");
+  const [location, setLocation] = useState("");
+  const [date, setDate] = useState("");
+  const [image, setImage] = useState(null);
   const navigate = useNavigate();
 
   const handleSubmit = (e) => {
     e.preventDefault();
 
-    // Add the new blog data
-    onAddBlog({ title, content });
+    if (!title || !content || !location || !date || !image) {
+      alert("Please fill all fields and upload an image!");
+      return;
+    }
 
-    // ✅ Show success alert, then redirect on OK
-    const confirm = window.alert("Submitted successfully!");
+    const newBlog = {
+      id: Date.now(),
+      title,
+      content,
+      location,
+      date,
+      image, // base64 string
+    };
 
-    // ✅ After alert, go to dashboard
-    navigate("/dashboard");
+    onAddBlog(newBlog);
+    window.alert("Blog added successfully!");
 
-    // Reset input fields
     setTitle("");
     setContent("");
+    setLocation("");
+    setDate("");
+    setImage(null);
+
+    navigate("/dashboard");
+  };
+
+  // 🔹 Updated: convert uploaded image to base64
+  const handleImageChange = (e) => {
+    const file = e.target.files[0];
+    if (file) {
+      const reader = new FileReader();
+      reader.onloadend = () => {
+        setImage(reader.result); // base64 string
+      };
+      reader.readAsDataURL(file);
+    }
   };
 
   const handleLogout = () => {
@@ -30,50 +57,68 @@ function AddBlog({ onAddBlog }) {
 
   return (
     <div>
-      {/* ✅ Navbar Section */}
       <nav className="addblog-navbar">
         <div className="navbar-left">TravelBlog</div>
-        <div className="navbar-right">
-          <Link to="/login" className="nav-login-btn">
-            Login
-          </Link>
-          <button onClick={handleLogout} className="logout-btn">
-            Logout
-          </button>
-        </div>
+        <button onClick={handleLogout} className="logout-btn">Logout</button>
       </nav>
 
-      {/* ✅ Add Blog Page Content */}
-      <div className="add-blog-page">
-        <div className="add-blog-card">
-          <h2 className="add-blog-title">Add Blog</h2>
+      <div className="addblog-container">
+        <div className="addblog-card">
+          <h2 className="addblog-title">Add New Travel Blog</h2>
           <form onSubmit={handleSubmit}>
-            <div>
-              <label className="add-blog-label">Title</label>
+            <div className="form-group">
+              <label>Blog Title</label>
               <input
                 type="text"
-                className="add-blog-input"
-                placeholder="Enter blog title"
                 value={title}
                 onChange={(e) => setTitle(e.target.value)}
+                placeholder="Enter blog title"
                 required
               />
             </div>
 
-            <div>
-              <label className="add-blog-label">Content</label>
+            <div className="form-group">
+              <label>Location</label>
+              <input
+                type="text"
+                value={location}
+                onChange={(e) => setLocation(e.target.value)}
+                placeholder="Enter location"
+                required
+              />
+            </div>
+
+            <div className="form-group">
+              <label>Visit Date</label>
+              <input
+                type="date"
+                value={date}
+                onChange={(e) => setDate(e.target.value)}
+                required
+              />
+            </div>
+
+            <div className="form-group">
+              <label>Image</label>
+              <input
+                type="file"
+                accept="image/*"
+                onChange={handleImageChange} // ✅ updated
+                required
+              />
+            </div>
+
+            <div className="form-group">
+              <label>Content</label>
               <textarea
-                className="add-blog-textarea"
-                placeholder="Write blog content"
                 value={content}
                 onChange={(e) => setContent(e.target.value)}
+                placeholder="Write your blog content..."
                 required
               />
             </div>
 
-            <button type="submit" className="add-blog-button">
-              Add Blog
-            </button>
+            <button type="submit" className="addblog-btn">Add Blog</button>
           </form>
         </div>
       </div>
