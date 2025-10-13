@@ -1,15 +1,36 @@
-import React, { useState } from "react";
-import { Link } from "react-router-dom";
+import React, { useState, useEffect } from "react";
+import { useNavigate, Link } from "react-router-dom";
 import "./AdminLogin.css";
 
 function AdminLogin() {
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
+  const navigate = useNavigate();
+
+  // Initialize default admin in localStorage
+  useEffect(() => {
+    const admins = JSON.parse(localStorage.getItem("admins")) || [];
+    const exists = admins.some((admin) => admin.username === "kepsi");
+    if (!exists) {
+      admins.push({ username: "kepsi", password: "kepsi123" });
+      localStorage.setItem("admins", JSON.stringify(admins));
+    }
+  }, []);
 
   const handleLogin = (e) => {
     e.preventDefault();
-    console.log("Admin Login:", { username, password });
-    // Add your login logic here
+
+    const admins = JSON.parse(localStorage.getItem("admins")) || [];
+    const user = admins.find(
+      (admin) => admin.username === username && admin.password === password
+    );
+
+    if (user) {
+      alert("Login successful!");
+      navigate("/dashboard"); // redirect to dashboard
+    } else {
+      alert("Invalid username or password!");
+    }
   };
 
   return (
@@ -49,7 +70,7 @@ function AdminLogin() {
           </button>
 
           <div className="login-links">
-            <Link to="/forgot-password" className="forgot-link">
+            <Link to="/forgot" className="forgot-link">
               Forgot Password?
             </Link>
             <span className="separator">|</span>
