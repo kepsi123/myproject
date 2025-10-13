@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import "./AddBlog.css";
 
-function AddBlog({ onAddBlog }) {
+function AddBlog() {
   const [title, setTitle] = useState("");
   const [content, setContent] = useState("");
   const [location, setLocation] = useState("");
@@ -24,31 +24,23 @@ function AddBlog({ onAddBlog }) {
       content,
       location,
       date,
-      image, // base64 string
+      image,
     };
 
-    onAddBlog(newBlog);
-    window.alert("Blog added successfully!");
+    // Save to localStorage
+    const existingBlogs = JSON.parse(localStorage.getItem("blogs")) || [];
+    localStorage.setItem("blogs", JSON.stringify([newBlog, ...existingBlogs]));
 
+    // Reset form
     setTitle("");
     setContent("");
     setLocation("");
     setDate("");
     setImage(null);
 
+    // Alert and redirect
+    alert("Blog added successfully!");
     navigate("/dashboard");
-  };
-
-  // 🔹 Updated: convert uploaded image to base64
-  const handleImageChange = (e) => {
-    const file = e.target.files[0];
-    if (file) {
-      const reader = new FileReader();
-      reader.onloadend = () => {
-        setImage(reader.result); // base64 string
-      };
-      reader.readAsDataURL(file);
-    }
   };
 
   const handleLogout = () => {
@@ -59,7 +51,9 @@ function AddBlog({ onAddBlog }) {
     <div>
       <nav className="addblog-navbar">
         <div className="navbar-left">TravelBlog</div>
-        <button onClick={handleLogout} className="logout-btn">Logout</button>
+        <div className="navbar-right">
+          <button onClick={handleLogout} className="logout-btn">Logout</button>
+        </div>
       </nav>
 
       <div className="addblog-container">
@@ -103,7 +97,9 @@ function AddBlog({ onAddBlog }) {
               <input
                 type="file"
                 accept="image/*"
-                onChange={handleImageChange} // ✅ updated
+                onChange={(e) =>
+                  setImage(URL.createObjectURL(e.target.files[0]))
+                }
                 required
               />
             </div>
