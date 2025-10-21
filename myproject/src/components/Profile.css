@@ -1,0 +1,89 @@
+.team-container {
+  font-family: 'Poppins', sans-serif;
+  min-height: 100vh;
+  color: #fff;
+  text-align: center;
+  padding-bottom: 60px;
+  background: url('/homeback.jpg') no-repeat center center/cover;
+  position: relative;
+}
+
+/* Add overlay for readability */
+.team-container::before {
+  content: "";
+  position: absolute;
+  top: 0; left: 0; right: 0; bottom: 0;
+  background: rgba(0,0,0,0.6);
+  z-index: 0;
+}
+
+.team-container > * {
+  position: relative;
+  z-index: 1;
+}
+
+/* Hero Section */
+.team-hero {
+  padding: 80px 20px 40px;
+}
+
+.team-hero h1 {
+  font-size: 2.8rem;
+  margin-bottom: 15px;
+  font-weight: 700;
+}
+
+.team-hero p {
+  font-size: 1.1rem;
+  color: #e2e2e2;
+  max-width: 700px;
+  margin: 0 auto;
+}
+
+/* Team Grid */
+.team-grid {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 40px;
+  flex-wrap: wrap;
+  padding: 40px;
+}
+
+.team-card {
+  background: rgba(255, 255, 255, 0.15);
+  color: #fff;
+  border-radius: 20px;
+  padding: 30px 25px;
+  width: 280px;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.15);
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.team-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 15px 30px rgba(0,0,0,0.25);
+}
+
+.team-card h3 {
+  font-size: 1.5rem;
+  margin-bottom: 10px;
+  font-weight: 600;
+}
+
+.team-bio {
+  font-size: 0.95rem;
+  line-height: 1.5;
+  color: #f0f0f0;
+}
+
+/* Footer */
+.team-footer {
+  background: rgba(0, 0, 0, 0.3);
+  padding: 20px;
+  border-radius: 10px;
+  width: fit-content;
+  margin: 40px auto 0;
+  font-size: 0.95rem;
+  color: #fff;
+}

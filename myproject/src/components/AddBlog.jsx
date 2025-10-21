@@ -1,8 +1,8 @@
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
-import "./AddBlog.css";
+import "./Addblog.css";
 
-function AddBlog() {
+function Addblog() {
   const [title, setTitle] = useState("");
   const [content, setContent] = useState("");
   const [location, setLocation] = useState("");
@@ -52,7 +52,9 @@ function AddBlog() {
       <nav className="addblog-navbar">
         <div className="navbar-left">TravelBlog</div>
         <div className="navbar-right">
-          <button onClick={handleLogout} className="logout-btn">Logout</button>
+          <button onClick={handleLogout} className="logout-btn">
+            Logout
+          </button>
         </div>
       </nav>
 
@@ -97,9 +99,7 @@ function AddBlog() {
               <input
                 type="file"
                 accept="image/*"
-                onChange={(e) =>
-                  setImage(URL.createObjectURL(e.target.files[0]))
-                }
+                onChange={(e) => setImage(URL.createObjectURL(e.target.files[0]))}
                 required
               />
             </div>
@@ -114,7 +114,9 @@ function AddBlog() {
               />
             </div>
 
-            <button type="submit" className="addblog-btn">Add Blog</button>
+            <button type="submit" className="addblog-btn">
+              Add Blog
+            </button>
           </form>
         </div>
       </div>
@@ -122,4 +124,4 @@ function AddBlog() {
   );
 }
 
-export default AddBlog;
+export default Addblog;
