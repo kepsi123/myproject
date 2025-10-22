@@ -1,4 +1,4 @@
-/* Page wrapper with background image */
+
 .forgot-page {
   display: flex;
   justify-content: center;
@@ -12,7 +12,7 @@
   position: relative;
 }
 
-/* Dark overlay */
+
 .forgot-page::before {
   content: "";
   position: absolute;
@@ -21,7 +21,7 @@
   z-index: 0;
 }
 
-/* Form container */
+
 .forgot-container {
   background-color: rgba(255, 255, 255, 0.1);
   backdrop-filter: blur(10px);
@@ -36,14 +36,14 @@
   z-index: 1;
 }
 
-/* Title */
+
 .forgot-container h2 {
   margin-bottom: 25px;
   font-size: 26px;
   font-weight: 600;
 }
 
-/* Input fields */
+
 .input-group {
   display: flex;
   flex-direction: column;
@@ -70,7 +70,7 @@
   color: #ddd;
 }
 
-/* Submit button */
+
 .reset-btn {
   width: 100%;
   padding: 12px;
@@ -89,7 +89,7 @@
   background-color: #0077b6;
 }
 
-/* Back to login link */
+
 .forgot-container p {
   margin-top: 15px;
   font-size: 14px;
@@ -104,7 +104,7 @@
   text-decoration: underline;
 }
 
-/* Responsive */
+
 @media (max-width: 480px) {
   .forgot-container {
     width: 90%;

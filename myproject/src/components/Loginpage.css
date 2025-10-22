@@ -1,4 +1,3 @@
-/* Make html and body full height and apply background */
 html, body {
   height: 100%;
   margin: 0;
@@ -32,7 +31,7 @@ html, body {
   align-items: center;
   background-color: rgba(76, 114, 128, 0.85);
   color: white;
-  font-weight: 600;
+   font-weight: 600;
   position: fixed;
   top: 0;
   left: 0;
@@ -68,7 +67,7 @@ html, body {
   width: 350px;
   text-align: center;
   color: white;
-  backdrop-filter: blur(5px);
+   backdrop-filter: blur(5px);
   margin-top: 80px; /* space for navbar */
 }
 
@@ -101,14 +100,7 @@ html, body {
   outline: none;
   background: rgba(255,255,255,0.2);
   color: white;
-}
-
-/* Buttons */
-.button-group {
-  display: flex;
-  justify-content: center; /* center login button */
-  margin-top: 20px;
-}
+  }
 
 .btn {
   flex: 1;
@@ -128,5 +120,7 @@ html, body {
 }
 
 .login-btn:hover {
-  background-color: #357abd;
+  background-color: #357abd;
 }
+
+

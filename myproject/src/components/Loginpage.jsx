@@ -10,16 +10,16 @@ function Loginpage() {
   const handleLogin = (e) => {
     e.preventDefault();
 
-    // ✅ Check credentials
+   
     if (username === "Reshi" && password === "Reshi123") {
-      // ✅ Save in localStorage
+      
       localStorage.setItem("username", username);
       localStorage.setItem("password", password);
 
-      // ✅ Success alert
+
       alert("Login successful!");
 
-      // ✅ Redirect to Landing page
+      
       navigate("/");
     } else {
       alert("Invalid username or password!");
@@ -28,12 +28,12 @@ function Loginpage() {
 
   return (
     <div className="login-page">
-      {/* 🔹 Navbar */}
+      
       <nav className="login-navbar">
         <div className="navbar-title">TravelBlog</div>
       </nav>
 
-      {/* 🔹 Login Box */}
+      
       <div className="login-box">
         <h1 className="title">Login</h1>
         <form onSubmit={handleLogin}>
