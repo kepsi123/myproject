@@ -1,10 +1,13 @@
 import React from 'react';
 import './Home.css';
+import Navbar from './Navbar';
 
 function Home() {
   return (
+    <div className='Home-Layout'>
+      <Navbar />
     <div className="home-container">
-
+     
       {/* Hero Section */}
       <section className="home-hero text-center text-white d-flex flex-column justify-content-center align-items-center">
         <h1 className="display-3 fw-bold mb-3 animate-fade-in">Discover. Travel. Live.</h1>
@@ -43,6 +46,7 @@ function Home() {
           <footer className="blockquote-footer text-white">Jamie Lyn Beatty</footer>
         </blockquote>
       </section>
+    </div>
     </div>
   );
 }

@@ -4,12 +4,12 @@
   display: flex;
   flex-direction: column;
   font-family: "Poppins", sans-serif;
-  position: relative;
-  background-image: url('/dashimage.jpg');
+  background-image: url("/dashimage.jpg");
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
   background-attachment: fixed;
+  position: relative;
 }
 
 .dashboard-container::before {
@@ -23,7 +23,7 @@
   z-index: 0;
 }
 
-/* ---------- Landing Page Navbar ---------- */
+/* ---------- Navbar Buttons ---------- */
 .navbar .btn-login {
   font-size: 1rem;
   padding: 7px 18px;
@@ -40,29 +40,24 @@
   color: #d4f1f9;
 }
 
-/* ---------- Admin Dashboard Navbar ---------- */
+/* ---------- Main Dashboard Layout ---------- */
 .dashboard-main {
+  display: flex;
   flex: 1;
   position: relative;
   z-index: 1;
+  min-height: calc(100vh - 70px); /* below navbar */
 }
 
 /* ---------- Sidebar ---------- */
-.dashboard-content {
-  display: flex;
-  flex: 1;
-  min-height: calc(100vh - 60px);
-  position: relative;
-  z-index: 1;
-}
-
 .dashboard-sidebar {
-  width: 230px;
-  background-color: rgba(96, 140, 154, 0.75);
+  width: 240px;
+  background-color: rgba(96, 140, 154, 0.85);
   color: white;
   padding-top: 20px;
-  box-shadow: 2px 0 10px rgba(0, 0, 0, 0.2);
+  box-shadow: 2px 0 10px rgba(0, 0, 0, 0.3);
   backdrop-filter: blur(6px);
+  flex-shrink: 0;
 }
 
 .dashboard-sidebar ul {
@@ -89,4 +84,12 @@
   color: white;
   text-decoration: none;
   display: block;
+}
+
+/* ---------- Main Content Area ---------- */
+.dashboard-main-content {
+  flex: 1;
+  padding: 20px;
+  color: white;
+  overflow-y: auto;
 }

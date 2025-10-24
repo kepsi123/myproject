@@ -16,17 +16,17 @@ function Registerpage() {
       return;
     }
 
-    // Get existing admins from localStorage
+    
     const existingAdmins = JSON.parse(localStorage.getItem("admins")) || [];
 
-    // Check if username already exists
+   
     const exists = existingAdmins.some((admin) => admin.username === username);
     if (exists) {
       alert("Username already taken!");
       return;
     }
 
-    // Add new admin
+    
     const newAdmin = { username, password };
     localStorage.setItem(
       "admins",

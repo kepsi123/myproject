@@ -1,10 +1,12 @@
 import React from 'react';
 import './About.css';
+import Navbar from './Navbar';
 
 function About() {
   return (
     <div className="about-container">
-
+     <Navbar />
+     
       {/* Hero Section */}
       <section className="about-hero text-center text-white d-flex flex-column justify-content-center align-items-center">
         <h1 className="display-4 fw-bold mb-3 animate-fade-in">About Our Travel Blog</h1>

@@ -8,12 +8,12 @@
   position: relative;
 }
 
-/* Add overlay for readability */
+/* Overlay */
 .team-container::before {
   content: "";
   position: absolute;
   top: 0; left: 0; right: 0; bottom: 0;
-  background: rgba(0,0,0,0.6);
+  background: rgba(0, 0, 0, 0.6);
   z-index: 0;
 }
 
@@ -50,25 +50,44 @@
   padding: 40px;
 }
 
+/* Team Card */
 .team-card {
   background: rgba(255, 255, 255, 0.15);
   color: #fff;
   border-radius: 20px;
   padding: 30px 25px;
   width: 280px;
-  box-shadow: 0 10px 25px rgba(0,0,0,0.15);
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
   transition: transform 0.3s, box-shadow 0.3s;
+  text-align: center;
 }
 
 .team-card:hover {
   transform: translateY(-10px);
-  box-shadow: 0 15px 30px rgba(0,0,0,0.25);
+  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.25);
 }
 
+/* Profile Image */
+.team-photo {
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  object-fit: cover;
+  margin-bottom: 15px;
+  border: 3px solid #fff;
+}
+
+/* Member Info */
 .team-card h3 {
-  font-size: 1.5rem;
-  margin-bottom: 10px;
+  font-size: 1.4rem;
+  margin-bottom: 8px;
   font-weight: 600;
+}
+
+.team-role {
+  font-size: 1rem;
+  color: #f5c542;
+  margin-bottom: 10px;
 }
 
 .team-bio {
@@ -86,4 +105,19 @@
   margin: 40px auto 0;
   font-size: 0.95rem;
   color: #fff;
+}
+.team-photo {
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  border: 3px solid #fff;
+  margin-bottom: 15px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+}
+
+.team-info {
+  font-size: 1rem;
+  color: #ffeb99;
+  margin-bottom: 6px;
+  font-weight: 500;
 }

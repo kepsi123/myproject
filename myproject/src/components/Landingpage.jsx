@@ -1,9 +1,16 @@
-// src/pages/Landingpage.jsx
-import React from "react";
+import React, { useEffect, useState } from "react";
 import Navbar from "../components/Navbar";
 import "./Landingpage.css";
 
 function Landingpage() {
+  const [blogs, setBlogs] = useState([]);
+
+  useEffect(() => {
+    // Fetch blogs from localStorage
+    const storedBlogs = JSON.parse(localStorage.getItem("blogs")) || [];
+    setBlogs(storedBlogs);
+  }, []);
+
   return (
     <div>
       <Navbar />
@@ -27,49 +34,21 @@ function Landingpage() {
           </p>
 
           <div className="card-row">
-            <div className="card shadow-sm">
-              <img src="/beach.jpeg" alt="Beach" />
-              <div className="card-body">
-                <h5 className="card-title">Beautiful Beaches</h5>
-                <p className="card-text">
-                  Relax and enjoy the sound of the waves at the world’s most beautiful beaches.
-                </p>
-                <a href="#" className="btn btn-outline-primary">Read More</a>
-              </div>
-            </div>
-
-            <div className="card shadow-sm">
-              <img src="/Mountain.jpeg" alt="Mountains" />
-              <div className="card-body">
-                <h5 className="card-title">Majestic Mountains</h5>
-                <p className="card-text">
-                  Adventure through breathtaking mountain landscapes and trails.
-                </p>
-                <a href="#" className="btn btn-outline-primary">Read More</a>
-              </div>
-            </div>
-
-            <div className="card shadow-sm">
-              <img src="/city.jpeg" alt="City" />
-              <div className="card-body">
-                <h5 className="card-title">City Escapes</h5>
-                <p className="card-text">
-                  Discover vibrant cities full of culture, food, and unforgettable experiences.
-                </p>
-                <a href="#" className="btn btn-outline-primary">Read More</a>
-              </div>
-            </div>
-
-            <div className="card shadow-sm">
-              <img src="/forest.jpg" alt="Forest" />
-              <div className="card-body">
-                <h5 className="card-title">Mystic Forests</h5>
-                <p className="card-text">
-                  Walk through serene forests and connect with nature.
-                </p>
-                <a href="#" className="btn btn-outline-primary">Read More</a>
-              </div>
-            </div>
+            {blogs.length > 0 ? (
+              blogs.map((blog) => (
+                <div key={blog.id} className="card shadow-sm">
+                  <img src={blog.image} alt={blog.title} />
+                  <div className="card-body">
+                    <h5 className="card-title">{blog.title}</h5>
+                    <p className="card-text">{blog.content}</p>
+                    <p className="card-meta">{blog.location} | {blog.date}</p>
+                    <a href="#" className="btn">Read More</a>
+                  </div>
+                </div>
+              ))
+            ) : (
+              <p>No blogs added yet.</p>
+            )}
           </div>
         </div>
       </section>

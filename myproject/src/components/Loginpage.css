@@ -71,7 +71,7 @@ html, body {
   margin-top: 80px; /* space for navbar */
 }
 
-/* Title */
+
 .title {
   margin-bottom: 20px;
   font-size: 24px;
@@ -79,7 +79,7 @@ html, body {
   color: white;
 }
 
-/* Inputs */
+
 .input-group {
   margin-bottom: 15px;
   text-align: left;
@@ -113,7 +113,7 @@ html, body {
   transition: 0.3s;
 }
 
-/* Login Button */
+
 .login-btn {
   background-color: #4a90e2;
   color: white;
