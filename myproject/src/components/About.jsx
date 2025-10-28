@@ -1,11 +1,12 @@
 import React from 'react';
 import './About.css';
 import Navbar from './Navbar';
+import UserNav from './UserNav';
 
 function About() {
   return (
     <div className="about-container">
-     <Navbar />
+     <UserNav />
      
       {/* Hero Section */}
       <section className="about-hero text-center text-white d-flex flex-column justify-content-center align-items-center">

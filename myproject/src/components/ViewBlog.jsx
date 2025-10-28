@@ -3,6 +3,7 @@ import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import Sidebar from "./Sidebar";
 import "./ViewBlog.css";
+import Navbar from "./Navbar";
 
 function ViewBlog() {
   const [blogList, setBlogList] = useState([]);
@@ -20,8 +21,10 @@ function ViewBlog() {
   };
 
   return (
+    <div>
+      <Navbar/>
     <div className="dashboard-layout">
-      <nav className="navbar navbar-expand-lg navbar-light bg-light shadow-sm">
+      {/* <nav className="navbar navbar-expand-lg navbar-light bg-light shadow-sm">
         <div className="container-fluid d-flex justify-content-between px-4">
           <a className="navbar-brand fw-bold" href="#">
             Travel Blog
@@ -30,10 +33,10 @@ function ViewBlog() {
             <Link to="/home"><button className="btn btn-login">Home</button></Link>
             <Link to="/about"><button className="btn btn-login">About</button></Link>
             <Link to="/profile"><button className="btn btn-login">Profile</button></Link>
-            <Link to="/logout"><button className="btn btn-login">Logout</button></Link>
+            <Link to="/"><button className="btn btn-login">Logout</button></Link>
           </div>
         </div>
-      </nav>
+      </nav> */}
 
       <div className="main-content">
         <Sidebar activePage={activePage} setActivePage={setActivePage} />
@@ -56,6 +59,7 @@ function ViewBlog() {
           )}
         </div>
       </div>
+    </div>
     </div>
   );
 }

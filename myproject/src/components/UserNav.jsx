@@ -3,12 +3,12 @@ import React from "react";
 import { Link, useNavigate } from "react-router-dom";
 import "./Navbar.css"; 
 
-function Navbar() {
+function UserNav() {
   const navigate = useNavigate();
 
   const handleLogout = () => {
     
-    navigate("/");
+    navigate("/login");
   };
 
   return (
@@ -17,7 +17,7 @@ function Navbar() {
         <div className="navbar-title">Travel Blog</div>
 
         <div className="d-flex gap-2">
-          {/* <Link to="/dashboard">
+          <Link to="/Landing">
             <button className="btn btn-login">Home</button>
           </Link>
           <Link to="/about">
@@ -25,7 +25,7 @@ function Navbar() {
           </Link>
           <Link to="/profile">
             <button className="btn btn-login">Profile</button>
-          </Link> */}
+          </Link>
 
           
           <button onClick={handleLogout} className="btn btn-login">
@@ -41,4 +41,4 @@ function Navbar() {
   );
 }
 
-export default Navbar;
+export default UserNav;

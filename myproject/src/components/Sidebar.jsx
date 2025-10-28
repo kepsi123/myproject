@@ -27,12 +27,12 @@ function Sidebar({ activePage, setActivePage }) {
   return (
     <div className="dashboard-sidebar">
       <ul>
-        <li
+        {/* <li
           className={activePage === "users" ? "active" : ""}
           onClick={() => handleClick("users")}
         >
           Users
-        </li>
+        </li> */}
         <li
           className={activePage === "addblog" ? "active" : ""}
           onClick={() => handleClick("addblog")}

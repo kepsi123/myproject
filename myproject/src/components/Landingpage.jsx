@@ -1,9 +1,11 @@
 import React, { useEffect, useState } from "react";
 import Navbar from "../components/Navbar";
 import "./Landingpage.css";
+import UserNav from "./UserNav";
 
 function Landingpage() {
   const [blogs, setBlogs] = useState([]);
+  
 
   useEffect(() => {
     // Fetch blogs from localStorage
@@ -13,8 +15,8 @@ function Landingpage() {
 
   return (
     <div>
-      <Navbar />
-
+      <UserNav />
+  
       {/* Hero Section */}
       <section className="hero">
         <div className="hero-content text-center text-white">

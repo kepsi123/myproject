@@ -17,7 +17,7 @@ function Loginpage() {
       alert("Login successful!");
 
       
-      navigate("/Landing");
+      navigate("/Home");
     } else {
       alert("Invalid username or password!");
     }

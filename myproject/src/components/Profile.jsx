@@ -1,6 +1,7 @@
 import React from "react";
 import "./Profile.css";
 import Navbar from "./Navbar";
+import UserNav from "./UserNav";
 
 function Profile() {
   const teamMembers = [
@@ -20,7 +21,7 @@ function Profile() {
 
   return (
     <div className="Profile-Layout">
-      <Navbar />
+      <UserNav />
       <div className="team-container">
         {/* Hero Section */}
         <section className="team-hero">

@@ -36,9 +36,9 @@ function AdminLogin() {
   return (
     <div className="admin-login-page">
       {/* Sign Out link at top-right */}
-      <Link to="/landing" className="signout-link">
+      {/* <Link to="/landing" className="signout-link">
         SignOut
-      </Link>
+      </Link> */}
 
       <div className="admin-login-container">
         <h2 className="admin-login-title">Admin</h2>

@@ -2,21 +2,23 @@ import React, { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import Sidebar from "./Sidebar";
 import "./Dashboard.css";
+import Navbar from "./Navbar";
 
 function Dashboard() {
   const [activePage, setActivePage] = useState("users");
   const navigate = useNavigate();
 
   return (
+    <div>
+      <Navbar/>
     <div className="dashboard-container">
-      {/* Navbar */}
-      <nav className="navbar navbar-expand-lg navbar-light bg-light shadow-sm">
+      {/* <nav className="navbar navbar-expand-lg navbar-light bg-light shadow-sm">
         <div className="container-fluid d-flex justify-content-between px-4">
           <a className="navbar-brand fw-bold" href="#">
             Travel Blog
           </a>
           <div className="d-flex align-items-center gap-2">
-            <Link to="/home">
+            <Link to="/Landing">
               <button className="btn btn-login">Home</button>
             </Link>
             <Link to="/about">
@@ -30,7 +32,7 @@ function Dashboard() {
             </Link>
           </div>
         </div>
-      </nav>
+      </nav> */}
 
       {/* Main Layout */}
       <div className="dashboard-main">
@@ -39,6 +41,7 @@ function Dashboard() {
           {/* Add your content here */}
         </div>
       </div>
+    </div>
     </div>
   );
 }
